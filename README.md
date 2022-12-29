@@ -73,6 +73,7 @@ services:
     restart: always
 ```
 
+//TODO: UPDATE DOCS
 This command or docker-compose file (depending on your choice) starts a container instance of slskd on ports 5000 (HTTP) and 5001 (HTTPS using a self-signed certificate). slskd begins listening for incoming connections on port 50000 and maps the application directory to the provided path.
 
 You can find a more in-depth guide to running slskd in Docker [here](https://github.com/slskd/slskd/blob/master/docs/docker.md).

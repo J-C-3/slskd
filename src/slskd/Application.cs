@@ -351,6 +351,7 @@ namespace slskd
                 writeBufferSize: OptionsAtStartup.Soulseek.Connection.Buffer.Transfer);
 
             var patch = new SoulseekClientOptionsPatch(
+                listenAddress: OptionsAtStartup.Soulseek.ListenAddress,
                 listenPort: OptionsAtStartup.Soulseek.ListenPort,
                 enableListener: true,
                 userEndPointCache: new UserEndPointCache(),
@@ -919,6 +920,7 @@ namespace slskd
                     }
 
                     var patch = new SoulseekClientOptionsPatch(
+                        listenAddress: old.ListenAddress.Equals(update.ListenAddress) ? null : update.ListenAddress,
                         listenPort: old.ListenPort == update.ListenPort ? null : update.ListenPort,
                         enableDistributedNetwork: old.DistributedNetwork.Disabled == update.DistributedNetwork.Disabled ? null : !update.DistributedNetwork.Disabled,
                         distributedChildLimit: old.DistributedNetwork.ChildLimit == update.DistributedNetwork.ChildLimit ? null : update.DistributedNetwork.ChildLimit,
